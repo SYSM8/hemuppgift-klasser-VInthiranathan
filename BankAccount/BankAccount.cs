@@ -8,12 +8,42 @@ namespace BankAccount
 {
     public class BankAccount
     {
-        //Lägg till Egenskaper (fields)
+        public string AccountNumber { get; set; }
+        public string AccountHolder { get; set; }
+        public double Balance { get; set; }
 
-        //Lägg till Konstruktor
+        
+        public BankAccount(string accNum, string accName, double amount)
+        {
+            AccountNumber = accNum;
+            AccountHolder = accName;
+            Balance = amount;
 
-        //Lägg till Metoder
-
-        //Lycka till! :)
+        }
+        public double Deposit (double deposit)
+        {
+            Balance += deposit;
+            Console.WriteLine($"Deposited: {deposit}, New balance: {Balance}");
+            return Balance;
+        }
+        public double Withdraw (double withdraw)
+        {
+            if (withdraw <= Balance)
+            {
+                Balance -= withdraw;
+                Console.WriteLine($"Withdrew: {withdraw}, New balance: {Balance}");
+            }
+            else
+            {
+                Console.WriteLine($"Your balance is not enough, Balance: {Balance}");
+                Console.WriteLine("Try again with lesser amount");
+            }
+            return Balance;
+        }
+        public double DisplayBalance()
+        {
+            Console.WriteLine($"Balance: {Balance}");
+            return Balance;
+        }
     }
 }
