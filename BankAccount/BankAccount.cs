@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 // Vithunan Inthiranathan
+
 namespace BankAccount
 {
     public class BankAccount
@@ -20,11 +21,10 @@ namespace BankAccount
             Balance = amount;
 
         }
-        public double Deposit (double deposit)
+        public void Deposit (double deposit)
         {
             Balance += deposit;
             Console.WriteLine($"Deposited: {deposit}, New balance: {Balance}");
-            return Balance;
         }
         public void Withdraw (double withdraw)
         {
