@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// Vithunan Inthiranathan
 namespace BankAccount
 {
     public class BankAccount
@@ -26,7 +26,7 @@ namespace BankAccount
             Console.WriteLine($"Deposited: {deposit}, New balance: {Balance}");
             return Balance;
         }
-        public double Withdraw (double withdraw)
+        public void Withdraw (double withdraw)
         {
             if (withdraw <= Balance)
             {
@@ -38,12 +38,10 @@ namespace BankAccount
                 Console.WriteLine($"Your balance is not enough, Balance: {Balance}");
                 Console.WriteLine("Try again with lesser amount");
             }
-            return Balance;
         }
-        public double DisplayBalance()
+        public void DisplayBalance()
         {
             Console.WriteLine($"Balance: {Balance}");
-            return Balance;
         }
     }
 }
