@@ -5,18 +5,21 @@
         static void Main(string[] args)
         {
             //Instansiera bankAccount klassen och testa den
-            //upp1();
-            upp2();
+            upp1();
+            //upp2();
         }
 
         static void upp1()
         {
-            Employee employee = new Employee("Jane", "Smith");
+            Employee employee = new Employee("Jane", -1);
             employee.Sal = 3000;
             Console.WriteLine($"Annual Salary: {employee.GetAnnualSalary()}");
             employee.GiveRaise(10);
             Console.WriteLine($"New Monthly Salary: {employee.Sal}");
             Console.WriteLine($"New Annual Salary: {employee.GetAnnualSalary()}");
+
+            Console.WriteLine($"Information");
+            employee.DisplayEmployeeInfo();
 
         }
         static void upp2()

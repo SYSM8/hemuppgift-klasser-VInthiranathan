@@ -13,29 +13,80 @@ namespace BankAccount
         //Lägg till Metoder
         //Lycka till! :)
 
-        public string Fname { get; set; }
-        public string Lname { get; set; }
-        public double Sal { get; set; }
+        //fields
+        private string firstName;
+        private int age;
+        private double sal;
+
+
+        //properties
+        public string FName
+        {
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                firstName = value;
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    age = value;
+                }
+                else
+                {
+                    age = 0;
+                }
+            }
+        }
+        public double Sal
+        {
+            get
+            {
+                return sal;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    sal = value;
+                }
+            }
+        }
 
         //konstruktor
-        public Employee(string Fname, string Lname)
+        public Employee(string Fname, int age)
         {
             // Ger värde till fields i klassen
-            this.Fname = Fname;
-            this.Lname = Lname;
+            this.FName = Fname;
+            this.Age = age;
         }
         //metoder
         public int GiveRaise(double per)
         {
             per = per / 100; //gör om till procent
-            Sal = Sal * (1 + per); //ge det nya värdet till gamla lönen
-            return Convert.ToInt32(Sal); // returnera nya månadslönen
+            sal += sal * per; //ge det nya värdet till gamla lönen
+            return Convert.ToInt32(sal); // returnera nya månadslönen
         }
 
         public int GetAnnualSalary()
         {
             //returnerar årliga lönen
-            return Convert.ToInt32(Sal * 12);
+            return Convert.ToInt32(sal * 12);
+        }
+        public void DisplayEmployeeInfo()
+        {
+            Console.WriteLine($"Name: {FName} \nAge: {Age} \nSalary: {Sal}");
         }
 
     }
