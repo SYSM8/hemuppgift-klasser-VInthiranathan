@@ -75,14 +75,14 @@ namespace BankAccount
         public int GiveRaise(double per)
         {
             per = per / 100; //gör om till procent
-            sal += sal * per; //ge det nya värdet till gamla lönen
-            return Convert.ToInt32(sal); // returnera nya månadslönen
+            Sal += Sal * per; //ge det nya värdet till gamla lönen
+            return Convert.ToInt32(Sal); // returnera nya månadslönen
         }
 
         public int GetAnnualSalary()
         {
             //returnerar årliga lönen
-            return Convert.ToInt32(sal * 12);
+            return Convert.ToInt32(Sal * 12);
         }
         public void DisplayEmployeeInfo()
         {
